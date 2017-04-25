@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block titile %} Ask {% endblock %}
+
+{% block custom_css %}
+<link href="/css/questions.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="questions_container">
+  <!-- question 1 -->
+  <div class="row question" border=1>
+    <table>
+    <tr>
+      <td rowspan="2" class="question-left">
+        <img class="question-avatar" src="/media/120.jpeg"></img>
+        <div class="question-mark-group input-group">
+          <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+          </button>
+          <span class="badge">4</span>
+          <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+          </button>
+        </div>
+      </td>
+      <td class="question-right">
+        <h3 class="question-title"> Заголовок вопроса </h3>
+        <p>
+          Очень длинный текст
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="question-footer">
+        <div class="question-footer-answer"><a href="/question/1/">Ответы (3)</a></div>
+        <div class="question-footer-tags">Тэги: <a href="/tag/aa/">aa</a> <a href="/tag/bb/">bb</a></div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+  <!-- question 2 -->
+  <div class="row question" border=1>
+    <table>
+    <tr>
+      <td rowspan="2" class="question-left">
+        <img class="question-avatar" src="/media/120.jpeg"></img>
+        <div class="question-mark-group input-group">
+          <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+          </button>
+          <span class="badge">4</span>
+          <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+          </button>
+        </div>
+      </td>
+      <td class="question-right">
+        <h3 class="question-title"> Заголовок вопроса </h3>
+        <p>
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="question-footer">
+        <div class="question-footer-answer"><a href="/question/1/">Ответы (3)</a></div>
+        <div class="question-footer-tags">Тэги: <a href="/tag/aa/">aa</a> <a href="/tag/bb/">bb</a></div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+  <!-- question 3 -->
+  <div class="row question" border=1>
+    <table>
+    <tr>
+      <td rowspan="2" class="question-left">
+        <img class="question-avatar" src="/media/120.jpeg"></img>
+        <div class="question-mark-group input-group">
+          <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+          </button>
+          <span class="badge">4</span>
+          <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+          </button>
+        </div>
+      </td>
+      <td class="question-right">
+        <h3 class="question-title"> Заголовок вопроса </h3>
+        <p>
+          Очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="question-footer">
+        <div class="question-footer-answer"><a href="/question/1/">Ответы (3)</a></div>
+        <div class="question-footer-tags">Тэги: <a href="/tag/aa/">aa</a> <a href="/tag/bb/">bb</a></div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+  <!-- question 4 -->
+  <div class="row question" border=1>
+    <table>
+    <tr>
+      <td rowspan="2" class="question-left">
+        <img class="question-avatar" src="/media/120.jpeg"></img>
+        <div class="question-mark-group input-group">
+          <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+          </button>
+          <span class="badge">4</span>
+          <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+          </button>
+        </div>
+      </td>
+      <td class="question-right">
+        <h3 class="question-title"> Заголовок вопроса </h3>
+        <p>
+          Очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+          очень длинный текст очень длинный текст очень длинный текст очень длинный текст очень длинный текст
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td class="question-footer">
+        <div class="question-footer-answer"><a href="/question/1/">Ответы (3)</a></div>
+        <div class="question-footer-tags">Тэги: <a href="/tag/aa/">aa</a> <a href="/tag/bb/">bb</a></div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+</div>
+{% endblock %}

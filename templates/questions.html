@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block titile %} Ask {% endblock %}
+
+{% block custom_css %}
+<link href="{% url 'css' 'css/questions.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="questions_container">
+  <h3 id="content-title">{{ title }}</h3>
+
+  {% csrf_token %}
+  {% for q in questions %}
+    {%include "q.html" with question=q %}
+  {% endfor %}
+
+  <nav>
+    <ul class="pagination">
+      {% for p in paginator %}
+      <li {% if p.active == True %} class="active" {% endif %}>
+        <a href="{{ base_url }}{{p.index}}">{{ p.index }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+</div>
+{% endblock %}
+
+{% block custom_js %}
+<script src="{% url 'js' 'js/questions.js' %}"></script>
+{% endblock %}

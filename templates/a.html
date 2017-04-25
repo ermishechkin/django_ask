@@ -1,0 +1,30 @@
+<div class="row answer">
+  <table>
+  <tr>
+    <td rowspan="2" class="answer-left">
+      <img class="answer-avatar" src="{{ answer.author.avatar_url }}" width=120px height=120px></img>
+      <div class="answer-mark-group input-group" data-aid={{ answer.id }}>
+        <button type="button" class="btn btn-default btn-sm btn-dislike btn-answer-mark"
+         data-val="dislike" {% if answer.disliked %} set="1" {% endif %}>
+          <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+        </button>
+        <span class="badge">{{ answer.raiting }}</span>
+        <button type="button" class="btn btn-default btn-sm btn-like btn-answer-mark"
+         data-val="like" {% if answer.liked %} set="1" {% endif %}>
+          <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+        </button>
+      </div>
+    </td>
+    <td class="answer-right">
+      <p>
+        {{ answer.text }}
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="answer-footer">
+      <input type="checkbox" {% if answer.correct == True %} checked {% endif %}>Правильный ответ
+    </td>
+  </tr>
+  </table>
+</div>

@@ -1,0 +1,13 @@
+
+.form-signup {
+  padding-bottom: 40px;
+}
+
+.form-signup .form-control {
+	padding: 10px;
+	height: auto;
+}
+
+.warning-msg {
+  padding: 7px 0px;
+}

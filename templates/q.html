@@ -1,0 +1,38 @@
+<div class="row question" border=1>
+  <table>
+  <tr>
+    <td rowspan="2" class="question-left">
+      <img class="question-avatar" src="{{ question.author.avatar_url }}" width=120px height=120px></img>
+      <div class="question-mark-group input-group" data-qid={{ question.id }}>
+        <button type="button" class="btn btn-default btn-sm btn-dislike btn-question-mark"
+         data-val="dislike" {% if question.disliked %} set="1" {% endif %}>
+          <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+        </button>
+        <span class="badge">{{ question.raiting }}</span>
+        <button type="button" class="btn btn-default btn-sm btn-like btn-question-mark"
+         data-val="like" {% if question.liked %} set="1" {% endif %}>
+          <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+        </button>
+      </div>
+    </td>
+    <td class="question-right">
+      <h3 class="question-title"> {{ question.title }} </h3>
+      <p>
+        {{ question.text }}
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="question-footer">
+      <div class="question-footer-answer">
+        <a href={{ question.get_url }}>Ответы ({{ question.answers.count }})</a>
+      </div>
+      <div class="question-footer-tags">Тэги:
+        {% for tag in question.tags.all %}
+          <a href="{% url 'tag' tag %}">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    </td>
+  </tr>
+</table>
+</div>

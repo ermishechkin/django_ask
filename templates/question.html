@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block titile %} Вопрос {% endblock %}
+
+{% block custom_css %}
+<link href="{% url 'css' 'css/question.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="row question" border=1>
+  <table>
+  <tr>
+    <td rowspan="2" class="question-left">
+      <img class="question-avatar" src="{{ question.author.avatar_url }}" width=120px height=120px></img>
+      <div class="question-mark-group input-group" data-qid={{ question.id }}>
+        <button type="button" class="btn btn-default btn-sm btn-dislike btn-question-mark"
+         data-val="dislike" {% if question.disliked %} set="1" {% endif %}>
+          <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+        </button>
+        <span class="badge">{{ question.raiting }}</span>
+        <button type="button" class="btn btn-default btn-sm btn-like btn-question-mark"
+         data-val="like" {% if question.liked %} set="1" {% endif %}>
+          <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+        </button>
+      </div>
+    </td>
+    <td class="question-right">
+      <h3 class="question-title"> {{ question.title }} </h3>
+      <p>
+        {{ question.text }}
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="question-footer">
+      <div class="question-footer-tags">Тэги:
+        {% for tag in question.tags.all %}
+          <a href="{% url 'tag' tag %}">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+
+<hr style="color=red">
+
+{% csrf_token %}
+<div class="answers_container">
+{% for a in answers %}
+  {%include "a.html" with answer=a %}
+{% endfor %}
+</div>
+
+{% if request.user.is_authenticated %}
+<form method="POST">
+  <div class="form-group">
+    <textarea class="form-control" name="content" id="content" placeholder="Напишите Ваш ответ"></textarea>
+  </div>
+  <button id="submit-button" class="btn btn-success" type="submit" data-qid={{ question.id }}>Answer</button>
+</form>
+{% endif %}
+
+
+<nav>
+  <ul class="pagination">
+    {% for p in paginator %}
+    <li {% if p.active == True %} class="active" {% endif %}>
+      <a href="{{ base_url }}{{p.index}}">{{ p.index }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+{# <input id="q_id" type="hidden" value="{{ question.id }}"></input> #}
+{% endblock %}
+
+{% block custom_js %}
+<script src="{% url 'js' 'js/question.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,35 @@
+#popular-tags-title {
+  margin-top: 0px;
+}
+
+.tag {
+  padding: 3px;
+}
+
+.tag-green, .tag-green:hover {
+  color: green;
+}
+
+.tag-yellow, .tag-yellow:hover {
+  color: orange;
+}
+
+.tag-red, .tag-red:hover {
+  color: red;
+}
+
+.tag-black, .tag-black:hover {
+  color: black;
+}
+
+.tag-small {
+  font-size: 14px;
+}
+
+.tag-middle {
+  font-size: 16px;
+}
+
+.tag-large {
+  font-size: 25px;
+}

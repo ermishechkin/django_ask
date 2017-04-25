@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block titile %} Регистрация {% endblock %}
+
+{% block custom_css %}
+<link href="{% url 'css' 'css/signup.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<h2 id="content-title">Регистрация</h2>
+
+<form class="form-signup form-horizontal" method="POST" enctype="multipart/form-data">
+<div class="form-group">
+  <label for="login" class="col-sm-2 col-xs-2 control-label">Ник</label>
+  <div class="col-sm-6 col-xs-10">
+    <input name="{{ form.nick.name }}" type="text" class="form-control"
+           placeholder="Ник" required="" autofocus=""
+           {% if form.nick.value %} value="{{ form.nick.value }}"{% endif %}>
+  </div>
+  {% if form.nick.errors %} <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-2">
+    <div class="text-danger warning-msg">{{ form.nick.errors.0|escape }}</div>
+  </div> {% endif %}
+</div>
+
+<div class="form-group">
+  <label for="email" class="col-sm-2 col-xs-2 control-label">Email</label>
+  <div class="col-sm-6 col-xs-10">
+    <input name="{{ form.email.name }}" type="email" class="form-control"
+           placeholder="Адрес электронной почты" required="" autofocus=""
+           {% if form.email.value %} value="{{ form.email.value }}"{% endif %}>
+  </div>
+  {% if form.email.errors %} <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-2">
+    <div class="text-danger warning-msg">{{ form.email.errors.0|escape }}</div>
+  </div> {% endif %}
+</div>
+
+<div class="form-group form-horizontal">
+  <label for="name" class="col-sm-2 col-xs-2 control-label">Имя</label>
+  <div class="col-sm-6 col-xs-10">
+    <input name="{{ form.name.name }}" type="text" class="form-control"
+           placeholder="Ваше имя" required="" autofocus=""
+           {% if form.name.value %} value="{{ form.name.value }}"{% endif %}>
+  </div>
+  {% if form.name.errors %} <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-2">
+    <div class="text-danger warning-msg">{{ form.name.errors.0|escape }}</div>
+  </div> {% endif %}
+</div>
+
+<div class="form-group form-horizontal">
+  <label for="password" class="col-sm-2 col-xs-2 control-label">Пароль</label>
+  <div class="col-sm-6 col-xs-10">
+    <input id="password_id" name="{{ form.password.name }}" type="password"
+           class="form-control" placeholder="Пароль" required="" autofocus="">
+  </div>
+  {% if form.password.errors %} <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-2">
+    <div class="text-danger warning-msg">{{ form.password.errors.0|escape }}</div>
+  </div> {% endif %}
+</div>
+
+<div class="form-group form-horizontal">
+  <label for="password_again" class="col-sm-2 col-xs-2 control-label">Повторите пароль</label>
+  <div class="col-sm-6 col-xs-10">
+    <input id="password_again" type="password" class="form-control" placeholder="Повторите пароль" required="" autofocus="">
+  </div>
+  <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-2">
+    <div id="password_mismatch" style="display: none" class="text-danger warning-msg">Пароли не совпадают</div>
+  </div>
+</div>
+
+<div class="form-group form-horizontal">
+  <label for="avatar" class="col-sm-2 col-xs-2 control-label">Фото</label>
+  <div class="col-sm-6 col-xs-10">
+    <input name="{{ form.avatar.name }}" type="file" class="form-control" required="" autofocus="">
+  </div>
+  {% if form.avatar.errors %} <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-2">
+    <div class="text-danger warning-msg">{{ form.avatar.errors.0|escape }}</div>
+  </div> {% endif %}
+</div>
+
+{% csrf_token %}
+
+<div class="form-group">
+  <div class="col-sm-2 col-xs-2"></div>
+  <div class="col-sm-6 col-xs-10">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрировать</button>
+  </div>
+</div>
+
+</form>
+{% endblock %}
+
+{% block custom_js %}
+<script src="{% url 'js' 'js/signup.js' %}"></script>
+{% endblock %}

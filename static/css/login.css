@@ -1,0 +1,16 @@
+
+.form-signin {
+  max-width: 440px;
+  /*padding: 15px;*/
+  margin: 0 auto;;
+  padding-bottom: 40px;
+}
+
+.form-signin .form-control {
+	padding: 10px;
+	height: auto;
+}
+
+.warning-msg {
+  padding: 7px 0px;
+}

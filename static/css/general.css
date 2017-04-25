@@ -1,0 +1,51 @@
+.navbar {
+  padding: 15px;
+}
+
+.navbar-brand {
+  padding-top: 7px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+	padding-right: 0px;
+  height: auto;
+}
+
+.user-settings {
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.user-avatar {
+	margin-bottom: 7px;
+}
+
+#profile-btn {
+  padding-left: 10px;
+  padding-right: 20px;
+
+}
+
+#content-title {
+  margin: 0px 0px 20px 0px;
+}
+
+.footer {
+	padding: 20px 0;
+	color: #999;
+	text-align: center;
+	background-color: #f9f9f9;
+	border-top: 1px solid #e5e5e5;
+}
+
+.right-panel {
+  padding: 0px 0px 0px 25px;
+}
+
+.popular-tags {
+  padding-bottom: 20px;
+}
+
+.member {
+  display: block;
+  font-size: medium;
+}

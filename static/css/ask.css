@@ -1,0 +1,14 @@
+#content {
+  height: 400px;
+  max-width: 100%;
+
+}
+
+.form-control {
+  /*margin: 3px 0px;*/
+  vertical-align: top;
+}
+
+#submit-button {
+  width: auto;
+}

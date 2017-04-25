@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block titile %} Ask {% endblock %}</title>
+
+    {% load staticfiles %}
+    <link href="{% url 'css' 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% url 'css' 'css/general.css' %}" rel="stylesheet">
+    <link href="{% url 'css' 'css/tags.css' %}" rel="stylesheet">
+    {% block custom_css %} {% endblock %}
+  </head>
+
+  <body>
+    <nav class="navbar container-fluid navbar-inverse">
+        <a class="navbar-brand col-sm-2 col-xs-6" href="{% url 'index' %}">Ask Alexandr</a>
+        <div class="user-settings col-sm-3 col-sm-push-7 col-xs-6">
+          {% if request.user.is_authenticated %}
+            <p>
+              <a href="/profile">
+                <img class="user-avatar" src="{{ request.profile.avatar_url }}"
+                 align="left" alt="Me" width="30px" height="30px"/>
+              </a>
+              <a id='profile-btn' href="/profile">{{ request.user.username }}</a>
+              <a id='logout-btn' href="{% url 'logout' %}">Выйти</a>
+            </p>
+          {% else %}
+            <a href= "{% url 'login' %}?continue={{ request.path }}">Войти</a>
+          {% endif %}
+        </div>
+        <form class="col-sm-6 col-sm-pull-3 col-xs-9" action="/search">
+          <input name="query" placeholder="Search" class="form-control" type="text">
+        </form>
+        <a href="{% url 'ask' %}" class="btn btn-success col-sm-1 col-sm-pull-3 col-xs-3">ASK!</a>
+    </nav>
+
+    <div class="container">
+      <div class="col-sm-9 col-xs-12 container">
+        {% block content %} {% endblock %}
+      </div>
+
+      <div class="right-panel container col-sm-3 col-xs-12">
+        <div class="popular-tags">
+          <h3 id="popular-tags-title">Популярные тэги</h3>
+          <a class="tag tag-green tag-large" href="{% url 'tag' 'perl' %}">perl</a>
+          <a class="tag tag-red tag-middle" href="{% url 'tag' 'python' %}">python</a>
+          <a class="tag tag-black tag-middle" href="{% url 'tag' 'TechnoPark' %}">TechnoPark</a>
+          <a class="tag tag-red tag-large" href="{% url 'tag' 'MySQL' %}">MySQL</a>
+          <a class="tag tag-green tag-middle" href="{% url 'tag' 'django' %}">django</a>
+          <a class="tag tag-black tag-middle" href="{% url 'tag' 'Mail.Ru' %}">Mail.Ru</a>
+          <a class="tag tag-black tag-small" href="{% url 'tag' 'Voloshin' %}">Voloshin</a>
+          <a class="tag tag-yellow tag-middle" href="{% url 'tag' 'Firefox' %}">Firefox</a>
+        </div>
+        <div class="best-members">
+          <h3>Лучшие пользователи</h3>
+          <a class="member" href="/member/mr.freeman">Mr. Freeman</a>
+          <a class="member" href="/member/dr.house">Dr. House</a>
+          <a class="member" href="/member/bender">Bender</a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="footer">
+      <p>Created by Alexandr Ermishechkin &copy 2016</p>
+    </div>
+
+    <script src="{% url 'js' 'js/jquery.min.js' %}"></script>
+    <script src="{% url 'js' 'js/bootstrap.min.js' %}"></script>
+    {% block custom_js %} {% endblock %}
+   </body>
+</html>
