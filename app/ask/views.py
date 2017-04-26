@@ -153,7 +153,7 @@ def add_answer(request):
         a.save()
 
         ans_html = str(render_to_response('a.html', { 'answer' : a }).content)
-        post('https://alex-erm.ru/my_ask/pub?id='+str(qid), ans_html)
+        post('https://alex-erm.ru/pub?id='+str(qid), ans_html)
 
         return JsonResponse(data={ 'status' : 'OK', 'id' : a.id })
     except Exception:

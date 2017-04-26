@@ -19,7 +19,7 @@ function set_mark(g, val) {
 
 function send_question_mark(qid, m) {
   $.ajax({
-    url: '/my_ask/mark_q',
+    url: '/mark_q',
     datatype: 'json',
     type: 'post',
     data: {

@@ -19,7 +19,7 @@ function set_mark(g, val) {
 
 function send_question_mark(qid, m) {
   $.ajax({
-    url: '/my_ask/mark_q',
+    url: '/mark_q',
     datatype: 'json',
     type: 'post',
     data: {
@@ -48,7 +48,7 @@ function mark_question() {
 
 function send_answer_mark(aid, m) {
   $.ajax({
-    url: '/my_ask/mark_a',
+    url: '/mark_a',
     datatype: 'json',
     type: 'post',
     data: {
@@ -80,7 +80,7 @@ function send_answer() {
   content = $(this).parents('form').find('#content').val();
 
   $.ajax({
-    url: '/my_ask/answer',
+    url: '/answer',
     datatype: 'json',
     type: 'POST',
     data: {
@@ -96,7 +96,7 @@ function send_answer() {
 
 function subscribe_answers() {
   qid = $('.btn-question-mark').parents('.question-mark-group').data('qid');
-  $.get("/my_ask/sub?id="+qid, function(data) {
+  $.get("/sub?id="+qid, function(data) {
     container = $('.answers_container').append(data);
     container.children('.btn-answer-mark').last().on('click', mark_answer);
     subscribe_answers();
