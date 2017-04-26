@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 COPY nginx.conf /etc/nginx/
 COPY django /etc/gunicorn.d/
 COPY app .
-CMD bash -c "service gunicorn restart && gunicorn -b 0.0.0.0:8000 ask_ermishechkin.wsgi"
+CMD bash -c "service nginx restart && gunicorn -b 0.0.0.0:8000 ask_ermishechkin.wsgi"
